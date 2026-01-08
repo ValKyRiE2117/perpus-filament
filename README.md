@@ -1,59 +1,140 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Perpustakaan Filament
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Sistem manajemen perpustakaan berbasis web yang dibangun dengan Laravel dan Filament Admin Panel. Sistem ini dirancang untuk membantu pengelolaan koleksi buku, peminjaman, pengembalian, dan manajemen anggota perpustakaan.
 
-## About Laravel
+## Tentang Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Perpustakaan Filament adalah aplikasi manajemen perpustakaan modern yang dirancang untuk memudahkan pengelolaan koleksi buku, pendaftaran anggota, serta proses peminjaman dan pengembalian buku. Aplikasi ini menggunakan Laravel sebagai framework backend dan Filament sebagai admin panel untuk memudahkan manajemen data.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Fitur
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Manajemen Buku**: Tambah, edit, hapus, dan cari koleksi buku
+- **Manajemen Anggota**: Pendaftaran dan pengelolaan data anggota perpustakaan
+- **Sistem Peminjaman**: Proses peminjaman dan pengembalian buku
+- **Laporan**: Laporan peminjaman, ketersediaan buku, dan aktivitas anggota
+- **Dashboard Admin**: Dashboard interaktif untuk memantau aktivitas perpustakaan
+- **Autentikasi**: Sistem login untuk admin dan anggota
+- **Pencarian Buku**: Fitur pencarian buku berdasarkan judul, penulis, atau kategori
+- **Notifikasi**: Pengingat jatuh tempo peminjaman buku
 
-## Learning Laravel
+## Stack Teknologi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **Backend**: Laravel 10.x
+- **Admin Panel**: Filament PHP
+- **Database**: MySQL
+- **Frontend**: Blade Templates, Tailwind CSS
+- **Server**: PHP 8.1+
+- **Package Manager**: Composer
+- **Build Tool**: Vite
+- **JavaScript**: Alpine.js (opsional)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalasi
 
-## Laravel Sponsors
+Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clone Repository**
+   ```bash
+   git clone <url-repository>
+   cd perpus-filament
+   ```
 
-### Premium Partners
+2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Konfigurasi Environment**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-## Contributing
+4. **Konfigurasi Database**
+   Edit file `.env` dan sesuaikan konfigurasi database:
+   ```
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=perpus_filament
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Migrate Database**
+   ```bash
+   php artisan migrate --seed
+   ```
 
-## Code of Conduct
+6. **Compile Assets**
+   ```bash
+   npm run build
+   # atau untuk development
+   npm run dev
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Jalankan Aplikasi**
+   ```bash
+   php artisan serve
+   ```
 
-## Security Vulnerabilities
+8. **Akses Aplikasi**
+   Buka browser dan akses `http://localhost:8000`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   Untuk mengakses admin panel:
+   `http://localhost:8000/admin`
 
-## License
+## Struktur Proyek
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+perpus-filament/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   ├── Middleware/
+│   │   └── Requests/
+│   ├── Models/
+│   ├── Filament/
+│   │   ├── Resources/
+│   │   └── Pages/
+│   └── Services/
+├── config/
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
+├── public/
+├── resources/
+│   ├── views/
+│   ├── css/
+│   └── js/
+├── routes/
+│   ├── web.php
+│   └── admin.php
+├── storage/
+├── tests/
+├── .env
+├── .env.example
+├── artisan
+├── composer.json
+├── package.json
+└── README.md
+```
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
+
+1. Fork repository ini
+2. Buat branch fitur (`git checkout -b fitur/AwesomeFeature`)
+3. Commit perubahan Anda (`git commit -m 'Add some AwesomeFeature'`)
+4. Push ke branch (`git push origin fitur/AwesomeFeature`)
+5. Buka Pull Request
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+## Kontak
+
+Jika Anda memiliki pertanyaan atau saran, silakan hubungi kami di [email@perpus-filament.com](mailto:email@perpus-filament.com)
