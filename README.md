@@ -1,10 +1,6 @@
-# Perpustakaan Filament
-
-Sistem manajemen perpustakaan berbasis web yang dibangun dengan Laravel dan Filament Admin Panel. Sistem ini dirancang untuk membantu pengelolaan koleksi buku, peminjaman, pengembalian, dan manajemen anggota perpustakaan.
-
 ## Tentang Project
 
-Perpustakaan Filament adalah aplikasi manajemen perpustakaan modern yang dirancang untuk memudahkan pengelolaan koleksi buku, pendaftaran anggota, serta proses peminjaman dan pengembalian buku. Aplikasi ini menggunakan Laravel sebagai framework backend dan Filament sebagai admin panel untuk memudahkan manajemen data.
+Sistem manajemen perpustakaan berbasis web yang dibangun dengan Laravel dan Filament Admin Panel. Sistem ini dirancang untuk membantu pengelolaan koleksi buku, peminjaman, pengembalian, dan manajemen anggota perpustakaan.
 
 ## Fitur
 
